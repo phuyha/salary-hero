@@ -1,0 +1,24 @@
+{
+  "name": "salary-hero",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/salary-hero/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "salary-hero:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "salary-hero:build:development"
+        },
+        "production": {
+          "buildTarget": "salary-hero:build:production"
+        }
+      }
+    }
+  }
+}
