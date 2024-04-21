@@ -14,7 +14,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@salary-hero/salary-hero-repository": [
+        "libs/salary-hero-repository/src/index.ts"
+      ],
+      "@salary-hero/shared/common": ["libs/shared/common/src/index.ts"],
+      "@salary-hero/shared/util": ["libs/shared/util/src/index.ts"],
+      "@salary-hero/shared/v8-profiler": [
+        "libs/shared/v8-profiler/src/index.ts"
+      ]
+    },
+    "strictPropertyInitialization": false,
   },
   "exclude": ["node_modules", "tmp"]
 }

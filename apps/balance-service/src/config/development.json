@@ -1,0 +1,24 @@
+{
+  "env": "development",
+  "balanceService": {
+    "pattern": "0 0 0 * * *"
+  },
+  "bullQueue": {
+    "prefix": "bull:balance",
+    "redis": {
+      "db": 2,
+      "host": "localhost",
+      "port": 6379,
+      "password": ""
+    }
+  },
+  "db": {
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "",
+    "database": "",
+    "logging": true
+  }
+}

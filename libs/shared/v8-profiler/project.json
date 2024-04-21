@@ -1,0 +1,33 @@
+{
+  "name": "v8-profiler",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/v8-profiler/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist\\{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/v8-profiler",
+        "tsConfig": "libs/shared/v8-profiler/tsconfig.lib.json",
+        "packageJson": "libs/shared/v8-profiler/package.json",
+        "main": "libs/shared/v8-profiler/src/index.ts",
+        "assets": ["libs/shared/v8-profiler/*.md"]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist\\{projectRoot}"
+      }
+    }
+  }
+}

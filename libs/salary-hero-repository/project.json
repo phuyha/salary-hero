@@ -1,0 +1,33 @@
+{
+  "name": "salary-hero-repository",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/salary-hero-repository/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist\\{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/salary-hero-repository",
+        "tsConfig": "libs/salary-hero-repository/tsconfig.lib.json",
+        "packageJson": "libs/salary-hero-repository/package.json",
+        "main": "libs/salary-hero-repository/src/index.ts",
+        "assets": ["libs/salary-hero-repository/*.md"]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist\\{projectRoot}"
+      }
+    }
+  }
+}
