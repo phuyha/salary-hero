@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@salary-hero/rabbitmq": ["libs/rabbitmq/src/index.ts"],
       "@salary-hero/salary-hero-repository": [
         "libs/salary-hero-repository/src/index.ts"
       ],
@@ -24,7 +25,7 @@
         "libs/shared/v8-profiler/src/index.ts"
       ]
     },
-    "strictPropertyInitialization": false,
+    "strictPropertyInitialization": false
   },
   "exclude": ["node_modules", "tmp"]
 }

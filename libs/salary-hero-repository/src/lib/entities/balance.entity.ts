@@ -13,9 +13,6 @@ export class Balance extends BaseEntity {
   @Column({ type: 'decimal', name: 'available' })
   available: number;
 
-  @Column({ type: 'decimal', name: 'pending' })
-  pending: number;
-
   @OneToOne(() => Worker, (worker) => worker.balance)
   @JoinTable()
   worker: Worker;

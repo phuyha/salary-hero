@@ -1,7 +1,12 @@
 {
   "env": "development",
   "balanceService": {
-    "pattern": "0 0 0 * * *"
+    "pattern": "0 0 0 * * *",
+    "workerPageSize": 1000,
+    "monthlyRoutingKey": "balance.monthly",
+    "dailyRoutingKey": "balance.daily",
+    "queue": "balance-calculation",
+    "maxRetry": 3
   },
   "bullQueue": {
     "prefix": "bull:balance",
@@ -20,5 +25,17 @@
     "password": "",
     "database": "",
     "logging": true
+  },
+  "rabbitmq": {
+    "exchanges": [
+      {
+        "name": "salary-hero.topic",
+        "type": "topic"
+      }
+    ],
+    "uri": "amqp://admin:admin@localhost:5672/salary-hero",
+    "connectionInitOptions": { "wait": false },
+    "mainExchange": "salary-hero-event",
+    "posonlineExchange": "salary-hero.topic"
   }
 }
